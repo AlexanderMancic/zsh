@@ -28,6 +28,7 @@ bindkey '^N' history-substring-search-down
 set -o vi
 
 export EDITOR=nvim
+export MANPAGER="$EDITOR +Man!"
 PATH=$PATH:~/zig-linux-x86_64-0.15.0-dev.337+4e700fdf8
 PATH=$PATH:~/go/bin/
 PATH=$PATH:/home/alex/.nvm/versions/node/v22.14.0/bin
