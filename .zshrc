@@ -10,11 +10,11 @@ autoload -Uz compinit
 compinit
 
 source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.zsh
-source ~/.config/zsh/plugins/history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 zstyle ':fzf-tab:*' fzf-bindings \
   'ctrl-n:down' \
