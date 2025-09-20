@@ -33,6 +33,8 @@ PATH=$PATH:~/zig-linux-x86_64-0.15.0-dev.337+4e700fdf8
 PATH=$PATH:~/go/bin/
 PATH=$PATH:/home/alex/.nvm/versions/node/v22.14.0/bin
 PATH=$PATH:/home/alex/scripts
+PATH=$PATH:/home/alex/.local/bin
+PATH=/home/alex/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
