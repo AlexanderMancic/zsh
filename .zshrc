@@ -15,6 +15,7 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 zstyle ':fzf-tab:*' fzf-bindings \
   'ctrl-n:down' \
@@ -24,8 +25,6 @@ zstyle ':fzf-tab:*' fzf-bindings \
 
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
-
-set -o vi
 
 export EDITOR=nvim
 export MANPAGER="$EDITOR +Man!"
