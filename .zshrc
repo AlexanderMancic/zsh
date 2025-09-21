@@ -5,6 +5,37 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+eval "$(zoxide init zsh)"
+z
+
+# aliases
+alias cd=z
+alias ..='cd ..'
+
+alias ls='exa -h --oneline --icons'
+alias ll='ls -l'
+alias lt='ls -T'
+
+alias r='rg -i'
+alias rp='rg -i --passthru'
+
+alias c='batcat --paging=never'
+
+alias n='nvim'
+
+alias ai='sudo apt install -y'
+
+alias gst='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push'
+alias gl='git log --oneline'
+alias gs='git switch'
+alias gu='git pull'
+alias gf='git fetch'
+alias gac='git add . && git commit -m'
+alias gb='git branch -a'
+
 # for fzf
 autoload -Uz compinit
 compinit
@@ -42,10 +73,6 @@ SAVEHIST=10000
 HISTSIZE=10000
 setopt INC_APPEND_HISTORY
 setopt HIST_FCNTL_LOCK
-
-eval "$(zoxide init zsh)"
-alias cd=z
-z
 
 export NVM_DIR="$HOME/.nvm"
 # This loads nvm
