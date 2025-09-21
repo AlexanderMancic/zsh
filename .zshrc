@@ -65,6 +65,8 @@ PATH=$PATH:/home/alex/.nvm/versions/node/v22.14.0/bin
 PATH=$PATH:/home/alex/scripts
 PATH=$PATH:/home/alex/.local/bin
 PATH=/home/alex/bin:$PATH
+PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:$HOME/.volta/bin
 export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 
