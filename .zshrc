@@ -1,12 +1,11 @@
+cd
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-eval "$(zoxide init zsh)"
-z
 
 # aliases
 alias cd=z
@@ -40,6 +39,7 @@ alias gb='git branch -a'
 autoload -Uz compinit
 compinit
 
+tmp=~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -54,9 +54,6 @@ zstyle ':fzf-tab:*' fzf-bindings \
   'enter:accept' \
   'ctrl-y:accept'
 
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
-
 export EDITOR=nvim
 export MANPAGER="$EDITOR +Man!"
 PATH=$PATH:~/zig-linux-x86_64-0.15.0-dev.337+4e700fdf8
@@ -69,6 +66,8 @@ PATH=$PATH:$HOME/.cargo/bin
 PATH=$PATH:$HOME/.volta/bin
 export JAVA_HOME=/usr/lib/jvm/java-24-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+
+eval "$(zoxide init zsh)"
 
 HISTFILE=~/.zsh_history
 SAVEHIST=10000
@@ -87,4 +86,11 @@ P10K_FILE="$ZDOTDIR/.p10k.zsh"
 [[ ! -f "$P10K_FILE" ]] || source "$P10K_FILE"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-bindkey '^Y' autosuggest-accept
+
+function keybindings() {
+  bindkey '^Y' autosuggest-accept
+  bindkey '^P' history-substring-search-up
+  bindkey '^N' history-substring-search-down
+}
+
+zle -N zle-line-init keybindings
